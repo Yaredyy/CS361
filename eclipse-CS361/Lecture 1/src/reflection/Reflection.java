@@ -63,6 +63,9 @@ public class Reflection {
 		// Print each method on one line
 		// Use this EXACT format
 		System.out.println("\n");
+		for (int i = 0; i < m.length; i++){
+			System.out.println(m[i].getName());
+		}
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class Circle extends GraphicObject {
 
 	// No use of encapsulation
 	public double centerX, centerY;
-	public double radius;
+	public double radius=(Double) null;
 	public int windowNumber;
 
 	/**
@@ -31,6 +31,21 @@ public class Circle extends GraphicObject {
 	@Override
 	void draw() {
 		System.out.println("Drawing a Circle...");
+		if ( radius == (Double)null) {
+			radius = 
+		}
+		for (int i = 0;i <= centerX + radius; i++) {
+		       for (int j = 1;j <=centerY + radius; j++) {
+		            double xSquared = (i - centerX)*(i - centerX);
+		            double ySquared = (j - centerY)*(j - centerY);
+		            if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
+		                System.out.print("#");
+		            } else {
+		                System.out.print(" ");
+		            }
+		        }
+		        System.out.println();
+		    }
 	}
 
 	// overloaded method in Circle

@@ -17,7 +17,7 @@ public class Circle extends GraphicObject {
 
 	// No use of encapsulation
 	public double centerX, centerY;
-	public double radius=(Double) null;
+	public double radius=2;
 	public int windowNumber;
 
 	/**
@@ -30,28 +30,39 @@ public class Circle extends GraphicObject {
 	// overridden method from GraphicObject
 	@Override
 	void draw() {
-		System.out.println("Drawing a Circle...");
-		if ( radius == (Double)null) {
-			radius = 
-		}
+		System.out.print("Drawing a Circle...");
+		
 		for (int i = 0;i <= centerX + radius; i++) {
-		       for (int j = 1;j <=centerY + radius; j++) {
+		       for (int j = 0;j <=centerY + radius; j++) {
 		            double xSquared = (i - centerX)*(i - centerX);
 		            double ySquared = (j - centerY)*(j - centerY);
 		            if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
-		                System.out.print("#");
+		                System.out.print("(}");
 		            } else {
 		                System.out.print(" ");
 		            }
 		        }
 		        System.out.println();
 		    }
+		System.out.println();
 	}
 
 	// overloaded method in Circle
 	// Not overridden as it does follow the signature in GraphicObject
 	public void draw(int color) {
 		System.out.println("Drawing a Circle in color...");
+		for (int i = 0;i <= centerX + radius; i++) {
+		       for (int j = 0;j <=centerY + radius; j++) {
+		            double xSquared = (i - centerX)*(i - centerX);
+		            double ySquared = (j - centerY)*(j - centerY);
+		            if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
+		                System.out.print("/#");
+		            } else {
+		                System.out.print(" ");
+		            }
+		        }
+		        System.out.println();
+		    }
 	}
 
 	public double circumference() {
@@ -80,7 +91,7 @@ public class Circle extends GraphicObject {
 	 */
 	@Override
 	public String toString() {
-		return "Circle: centerX = "+ centerX + "centerY = " + centerY + " radius = " + radius;
+		return "Circle: centerX = "+ centerX + " centerY = " + centerY + " radius = " + radius;
 	}
 
 	// TODO To complete
@@ -89,18 +100,25 @@ public class Circle extends GraphicObject {
 	 * @return true if this and obj have the same values for
 	 * centerX, centerY and radius
 	 */
-	@Override
-	public boolean equals(Object obj) {
-		return super.equals(obj);
+	public boolean equals(Circle obj) {
+		boolean flag = true;
+		if(this.centerX!=obj.centerX||this.centerY!=obj.centerY|| this.radius!=obj.radius) {
+			flag = false;
+		}
+		return flag;
 	}
 
 	// TODO To complete
 	/**
 	 * @return an exact copy of the Circle that is a new instance 
 	 */
-	// @Override
-	// protected Object clone() throws CloneNotSupportedException {
-	// return super.clone();
-	// }
+	 @Override
+	 protected Object clone() throws CloneNotSupportedException {
+		 Circle cl = new Circle();
+		 cl.centerX = this.centerX;
+		 cl.centerY = this.centerY;
+		 cl.radius = this.radius;
+	 return cl;
+	 }
 
 }

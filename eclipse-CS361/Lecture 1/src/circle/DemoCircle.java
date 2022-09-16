@@ -60,7 +60,22 @@ public class DemoCircle {
 		
 		System.out.println(c1.toString());
 		System.out.println(c2.toString());
-		//c3.
+		
+		System.out.println();
+		
+		Circle c3 = new Circle();
+		try {
+			c3 = (Circle)c1.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		
+		if(c3.equals(c1)) {
+			System.out.println("c3.equals(c1) is true");
+		}
+		else {
+			System.out.println("c3.equals(c1) is false");
+		}
 
 
 	}

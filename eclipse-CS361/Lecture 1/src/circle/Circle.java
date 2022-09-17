@@ -17,7 +17,7 @@ public class Circle extends GraphicObject {
 
 	// No use of encapsulation
 	public double centerX, centerY;
-	public double radius=2;
+	public double radius=3;
 	public int windowNumber;
 
 	/**
@@ -37,7 +37,7 @@ public class Circle extends GraphicObject {
 		            double xSquared = (i - centerX)*(i - centerX);
 		            double ySquared = (j - centerY)*(j - centerY);
 		            if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
-		                System.out.print("(}");
+		                System.out.print("//");
 		            } else {
 		                System.out.print(" ");
 		            }
@@ -56,7 +56,7 @@ public class Circle extends GraphicObject {
 		            double xSquared = (i - centerX)*(i - centerX);
 		            double ySquared = (j - centerY)*(j - centerY);
 		            if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
-		                System.out.print("/#");
+		                System.out.print("//");
 		            } else {
 		                System.out.print(" ");
 		            }
@@ -100,12 +100,15 @@ public class Circle extends GraphicObject {
 	 * @return true if this and obj have the same values for
 	 * centerX, centerY and radius
 	 */
-	public boolean equals(Circle obj) {
-		boolean flag = true;
-		if(this.centerX!=obj.centerX||this.centerY!=obj.centerY|| this.radius!=obj.radius) {
-			flag = false;
+	@Override
+	public boolean equals(Object obj) {
+		if(obj==null|| getClass()!= obj.getClass()) {
+			return false;
 		}
-		return flag;
+		Circle ob = (Circle) obj;
+		
+		return (centerX==ob.centerX&&centerY==ob.centerY&&radius==ob.radius);
+		
 	}
 
 	// TODO To complete

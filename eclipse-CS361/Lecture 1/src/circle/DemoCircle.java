@@ -6,6 +6,7 @@ package circle;
 /**
  * @author ADD YOUR NAME
  *	Yared Y Yehualashet
+ *	CS 361
  */
 public class DemoCircle {
 
@@ -70,12 +71,7 @@ public class DemoCircle {
 			e.printStackTrace();
 		}
 		
-		if(c3.equals(c1)) {
-			System.out.println("c3.equals(c1) is true");
-		}
-		else {
-			System.out.println("c3.equals(c1) is false");
-		}
+		System.out.println("c3.equals(c1) is " + c3.equals(c1));
 
 
 	}

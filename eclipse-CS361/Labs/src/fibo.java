@@ -1,4 +1,4 @@
-package default package;
+package eclipse.CS361.Labs;
 public class fibo {
 	public static int fibonacci(int n) {
 		

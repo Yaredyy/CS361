@@ -191,14 +191,11 @@ public class TokenStream {
 
 	private boolean isKeyword(String s) {
 		// TODO TO BE COMPLETED 
-        if(s=="boolean"||s=="else"||s=="if"||s=="int"||s=="main"||s=="void"||s=="while"){
-            return true;
-        }
-		return false;
+		return (s.equals("boolean")||s.equals("else")||s.equals("void")||s.equals("if")||s.equals("int")||s.equals("main"));
 	}
 
 	private boolean isWhiteSpace(char c) {
-		return (c == ' ' || c == '\t' || c == '\r' || c == '\n' || c == '\f');
+		return (c == ' ' || s == '\t' || c == '\r' || c == '\n' || c == '\f');
 	}
 
 	private boolean isEndOfLine(char c) {
@@ -218,14 +215,13 @@ public class TokenStream {
 
 	private boolean isSeparator(char c) {
 		// TODO TO BE COMPLETED
-        if(char == '')
-		return false;
+		return (c=='(' || c==')'|| c=='{'|| c=='}'|| c==';'|| c==',');
 	}
 
 	private boolean isOperator(char c) {
 		// Checks for characters that start operators
 		// TODO TO BE COMPLETED
-		return false;
+		return (c=='='||c=='+'||c=='-'||c=='*'||c=='/'||c=='<'||c=="<="||c=='>'||c==">="||c=="=="||c=="!="||c=="&&"||c=="||"||c=='!');
 	}
 
 	private boolean isLetter(char c) {
@@ -234,7 +230,7 @@ public class TokenStream {
 
 	private boolean isDigit(char c) {
 		// TODO TO BE COMPLETED
-		return false;
+		return (c>47&&c<58);
 	}
 
 	public boolean isEndofFile() {
